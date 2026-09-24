@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.project.Student;
-import com.example.project.StudentService;
+import com.example.project.entity.Student;
+import com.example.project.service.StudentService;
+
 
 @RestController
 @RequestMapping("/students")

@@ -1,8 +1,11 @@
-package com.example.project;
+package com.example.project.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.example.project.entity.Student;
+import com.example.project.repository.StudentRepository;
 
 @Service
 public class StudentService {
