@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Timetable_BE</name>
+	<name>teacher_management</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,7 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1790262891182</id>
+			<id>1790245982627</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
