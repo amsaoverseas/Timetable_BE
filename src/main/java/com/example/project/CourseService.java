@@ -1,11 +1,9 @@
-package com.example.project.service;
+package com.example.project;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
-import com.example.project.model.Course;
 
 @Service
 public class CourseService {

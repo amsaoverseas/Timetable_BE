@@ -1,8 +1,6 @@
-package com.example.project.repository;
+package com.example.project;
 
 import java.util.List;
-
-import com.example.project.model.Course;
 
 public interface CourseRepository {
 
