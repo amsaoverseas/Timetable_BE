@@ -30,7 +30,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Department> getDepartmentById(@PathVariable Long id) {
+    public ResponseEntity<Department> getDepartmentById(@PathVariable("id") Long id){
         Optional<Department> department = departmentService.getDepartmentById(id);
 
         if (department.isPresent()) {
@@ -42,7 +42,7 @@ public class DepartmentController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Department> updateDepartment(
-            @PathVariable Long id,
+            @PathVariable("id")Long id,
             @RequestBody Department department) {
 
         try {
@@ -55,7 +55,7 @@ public class DepartmentController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> deleteDepartment(@PathVariable Long id) {
+    public ResponseEntity<Boolean> deleteDepartment(@PathVariable("id") Long id){
 
         if (departmentService.deleteDepartment(id)) {
             return ResponseEntity.ok(true);
