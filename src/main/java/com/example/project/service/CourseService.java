@@ -1,6 +1,7 @@
 package com.example.project.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ public class CourseService {
     }
 
     public Course createCourse(Course course) {
+        course.setId(null);
         return courseRepository.save(course);
     }
 
@@ -24,19 +26,22 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
-    public Course getCourseById(Long id) {
-        return courseRepository.findById(id).orElse(null);
+    public Optional<Course> getCourseById(Long id) {
+        return courseRepository.findById(id);
     }
 
     public Course updateCourse(Long id, Course course) {
-        Course existingCourse = courseRepository.findById(id).orElse(null);
 
-        if (existingCourse != null) {
-            existingCourse.setCourseName(course.getCourseName());
-            existingCourse.setCourseCode(course.getCourseCode());
-            existingCourse.setDescription(course.getDescription());
+        Optional<Course> existingCourse = courseRepository.findById(id);
 
-            return courseRepository.save(existingCourse);
+        if (existingCourse.isPresent()) {
+            Course existing = existingCourse.get();
+
+            existing.setCourseName(course.getCourseName());
+            existing.setCourseCode(course.getCourseCode());
+            existing.setDescription(course.getDescription());
+
+            return courseRepository.save(existing);
         }
 
         return null;
